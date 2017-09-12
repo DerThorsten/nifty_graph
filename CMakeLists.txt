@@ -93,7 +93,6 @@ set(BOOST_INCLUDE_DIR ${source_dir}/include/boost-1.64.0/ CACHE INTERNAL "Path t
 include_directories(${BOOST_INCLUDE_DIR})
 
 
-
 #---------------------------------------------------
 # GSL: Guideline Support Library  
 #---------------------------------------------------
@@ -133,31 +132,6 @@ ExternalProject_Add(
 ExternalProject_Get_Property(external_xtensor source_dir)
 set(XTENSOR_INCLUDE_DIR ${source_dir}/include/ CACHE INTERNAL "Path to include folder for xtensor")
 include_directories(${XTENSOR_INCLUDE_DIR})
-
-
-
-#---------------------------------------------------
-# nifty-tools 
-#---------------------------------------------------
-ExternalProject_Add(
-    external_nifty_tools
-    PREFIX ${CMAKE_BINARY_DIR}/external_projects/nifty_tools
-    GIT_REPOSITORY https://github.com/DerThorsten/nifty_tools
-    GIT_TAG master
-    TIMEOUT 5
-    #UPDATE_COMMAND ${GIT_EXECUTABLE} pull
-    CONFIGURE_COMMAND ""
-    BUILD_COMMAND ""
-    INSTALL_COMMAND ""
-    LOG_DOWNLOAD ON
-)
-# Expose required variable (DOCTEST_INCLUDE_DIR) to parent scope
-ExternalProject_Get_Property(external_nifty_tools source_dir)
-set(NIFTY_TOOLS_INCLUDE_DIR ${source_dir}/include/ CACHE INTERNAL "Path to include folder for nifty_tools")
-include_directories(${NIFTY_TOOLS_INCLUDE_DIR})
-
-
-
 
 
 # meta target for all to handle dependencies

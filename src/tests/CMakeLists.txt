@@ -12,6 +12,7 @@ ExternalProject_Add(
     GIT_REPOSITORY https://github.com/onqtam/doctest.git
     TIMEOUT 10
     GIT_TAG ef9da5263ac0092ce5662ab6c94b0eaf47a6ce03
+    #UPDATE_COMMAND ${GIT_EXECUTABLE} pull
     CONFIGURE_COMMAND ""
     BUILD_COMMAND ""
     INSTALL_COMMAND ""

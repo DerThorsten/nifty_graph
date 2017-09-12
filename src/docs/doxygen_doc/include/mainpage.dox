@@ -47,10 +47,10 @@
 /////////////////////////////////////////////
 // DOXYGEN MAINPAGE
 /////////////////////////////////////////////
-/*! \mainpage nifty graph submodule
+/*! \mainpage nifty graph
  *
  *  \section Introduction
- *  \A nifty c++ graph library
+ *  \
  * 
  */
 

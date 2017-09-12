@@ -44,39 +44,39 @@ matrix:
             - cmake
             - clang-3.7
       env: COMPILER=clang CLANG=3.7
-    - os: linux
-      addons:
-       apt:
-         sources:
-           - ubuntu-toolchain-r-test
-           - deadsnakes
-           - llvm-toolchain-precise-3.8
-         packages:
-           - - cmake
-           - clang-3.8
-      env: COMPILER=clang CLANG=3.8
-    - os: linux
-      addons:
-       apt:
-         sources:
-           - ubuntu-toolchain-r-test
-           - deadsnakes
-           - llvm-toolchain-precise-3.9
-         packages:
-           - cmake
-           - clang-3.9
-      env: COMPILER=clang CLANG=3.9
-    - os: linux
-      addons:
-       apt:
-         sources:
-           - ubuntu-toolchain-r-test
-           - deadsnakes
-           - llvm-toolchain-precise-4.0
-         packages:
-           - clang-4.0
-           - cmake
-      env: COMPILER=clang CLANG=4.0
+    # - os: linux
+    #   addons:
+    #    apt:
+    #      sources:
+    #        - ubuntu-toolchain-r-test
+    #        - deadsnakes
+    #        - llvm-toolchain-precise-3.8
+    #      packages:
+    #        - cmake
+    #        - clang-3.8
+    #   env: COMPILER=clang CLANG=3.8
+    # - os: linux
+    #   addons:
+    #    apt:
+    #      sources:
+    #        - ubuntu-toolchain-r-test
+    #        - deadsnakes
+    #        - llvm-toolchain-precise-3.9
+    #      packages:
+    #        - cmake
+    #        - clang-3.9
+    #   env: COMPILER=clang CLANG=3.9
+    # - os: linux
+    #   addons:
+    #    apt:
+    #      sources:
+    #        - ubuntu-toolchain-r-test
+    #        - deadsnakes
+    #        - llvm-toolchain-precise-4.0
+    #      packages:
+    #        - clang-4.0
+    #        - cmake
+    #   env: COMPILER=clang CLANG=4.0
     - os: osx
       osx_image: xcode8
       compiler: clang
@@ -110,7 +110,6 @@ script:
       fi
 
     - wget "http://repo.continuum.io/miniconda/Miniconda3-$MINCONDA_VERSION-$MINCONDA_OS.sh" -O miniconda.sh;
-
     - bash miniconda.sh -b -p $HOME/miniconda
     - export PATH="$HOME/miniconda/bin:$PATH"
     - hash -r
