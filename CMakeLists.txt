@@ -71,6 +71,29 @@ include_directories(include)
 # external projects which need to be in the `include tree`
 #-------------------------------------------------------------------------------------------------------------------
 
+
+#---------------------------------------------------
+# Boost header Only
+#---------------------------------------------------
+ExternalProject_Add(
+    external_boost_header_only
+    PREFIX ${CMAKE_BINARY_DIR}/external_projects/GSL
+    GIT_REPOSITORY https://github.com/NumScale/boost-header-only
+    GIT_TAG 3a7ee7dfafa2a484511289aab5a4f5344bdcf8d7
+    TIMEOUT 5
+    #UPDATE_COMMAND ${GIT_EXECUTABLE} pull
+    CONFIGURE_COMMAND ""
+    BUILD_COMMAND ""
+    INSTALL_COMMAND ""
+    LOG_DOWNLOAD ON
+)
+# Expose required variable (DOCTEST_INCLUDE_DIR) to parent scope
+ExternalProject_Get_Property(external_boost_header_only source_dir)
+set(BOOST_INCLUDE_DIR ${source_dir}/include/boost-1.64.0/ CACHE INTERNAL "Path to include folder for boost")
+include_directories(${BOOST_INCLUDE_DIR})
+
+
+
 #---------------------------------------------------
 # GSL: Guideline Support Library  
 #---------------------------------------------------
@@ -78,7 +101,7 @@ ExternalProject_Add(
     external_gsl
     PREFIX ${CMAKE_BINARY_DIR}/external_projects/GSL
     GIT_REPOSITORY https://github.com/Microsoft/GSL
-    GIT_TAG master
+    GIT_TAG b01450878b39307df9abb702f02ce8c1d6c9ee30
     TIMEOUT 5
     #UPDATE_COMMAND ${GIT_EXECUTABLE} pull
     CONFIGURE_COMMAND ""
