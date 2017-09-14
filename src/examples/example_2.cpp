@@ -2,5 +2,5 @@
 
 
 int main(){
-    auto res = nifty::graph::hello_world();
+   
 }

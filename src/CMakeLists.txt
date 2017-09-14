@@ -6,14 +6,6 @@ if(BUILD_TESTS)
 endif(BUILD_TESTS)
 
 #---------------------------------------
-# documentation folder
-#---------------------------------------
-if(BUILD_DOCS)
-    add_subdirectory(docs)
-endif(BUILD_DOCS)
-
-
-#---------------------------------------
 # examples folder
 #---------------------------------------
 if(BUILD_EXAMPLES)
